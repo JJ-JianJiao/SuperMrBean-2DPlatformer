@@ -1,0 +1,8 @@
+completed--------(3 marks) Create a platformer game that has a main character and a whole bunch of platforms.
+completed--------(5 marks) Make a goal for the game - get to a certain spot, collect a certain number of somethings, etc. When the goal for the game is achieved, a success message should be displayed, with the option to start again.
+completed--------(1 mark) Put a background song in the game - every platformer has a good background song
+completed--------(3 marks) Give the main character the ability to shoot projectiles.
+completed--------(1 marks) Put barriers in the main character's way. He/she will have to shoot them out of the way.
+completed--------(2 marks) Make the game look nice - everything in the scene should have a texture
+
+
