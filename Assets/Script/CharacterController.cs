@@ -51,6 +51,7 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(myRigidBody.velocity.x);
         if (isBegin && !hideMenu) 
         {
             title.gameObject.SetActive(false);
@@ -94,9 +95,13 @@ public class CharacterController : MonoBehaviour
                     Invoke("ReloadScene", 3);
                 }
             }
-            else { 
+            else {
+                if (Hp > 0)
+                {
+                    horizontalAxis = Input.GetAxis("Horizontal");
+                }
                 if (Hp <= 0) { 
-        
+                    //TODO: die (animation, sound)
                 }
 
 
@@ -176,13 +181,11 @@ public class CharacterController : MonoBehaviour
         if (isBegin) { 
             if (isWin)
             {
-
+                //TODO: load second scene or .....
             }
             else
             {
-                if (Hp > 0) { 
-                    horizontalAxis = Input.GetAxis("Horizontal");
-                }
+
                 if (horizontalAxis > 0 && !facingRight)
                 {
                     FlipFacing();
@@ -198,6 +201,11 @@ public class CharacterController : MonoBehaviour
                 {
                     myRigidBody.AddForce(Vector2.right * horizontalAxis * moveForce);
                 }
+
+                if (horizontalAxis == 0) {
+                   // myRigidBody.velocity = new Vector2(0, myRigidBody.velocity.y);
+                }
+
                 //have we exceeded the maxSpeed? Clamp it (set it to maxSpeed).
                 if (Mathf.Abs(myRigidBody.velocity.x) > maxSpeed)
                 {
